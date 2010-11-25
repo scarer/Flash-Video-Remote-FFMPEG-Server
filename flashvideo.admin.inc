@@ -640,6 +640,14 @@ function flashvideo_universal_settings_form() {
     drupal install leave this field blank.'),
     '#required' => FALSE,
   );
+  $form['ffmpeg']['flashvideo_remoteffmpeg'] = array(
+    '#title' => t('ffmpeg remote location'),
+    '#type' => 'textfield',
+    '#default_value' => flashvideo_variable_get(NULL, 'flashvideo_remoteffmpeg', ''),
+    '#maxlength' =>  128,
+    '#description' => t('The location of ffmpeg on your remote host. MIght be installed at /usr/bin/ffmpeg. If your ffmpeg install is located on the same server as your drupal install leave this field blank.'),
+    '#required' => FALSE,
+  );
   /*$form['ffmpeg']['flashvideo_remotehostuser'] = array(
     '#title' => t('ffmpeg remote host user'),
     '#type' => 'textfield',

@@ -872,6 +872,8 @@ function flashvideo_get_convert_params($node_type) {
   $params['cmd_remotescript'] = flashvideo_variable_get(NULL, 'flashvideo_remotescript', '');
   //address of remote host entered through universal settings form
   $params['cmd_remotescripturl'] = flashvideo_variable_get(NULL, 'flashvideo_remotescripturl', '');
+  //location of ffmpeg on remote host entered through universal settings form
+  $params['cmd_remoteffmpeg'] = flashvideo_variable_get(NULL, 'flashvideo_remoteffmpeg', '');
   //user that has access to remote host entered through universal settings form
   /*$params['cmd_remoteuser'] = flashvideo_variable_get(NULL, 'flashvideo_remotehostuser', '');
   //password for user that has access to remote host entered through universal settings form
