@@ -620,15 +620,27 @@ function flashvideo_universal_settings_form() {
     '#required' => TRUE,
   );
   /* added for external encoding server */
-    $form['ffmpeg']['flashvideo_remotehost'] = array(
-    '#title' => t('ffmpeg remote host'),
-    '#type' => 'textfield',
-    '#default_value' => flashvideo_variable_get(NULL, 'flashvideo_remotehost', ''),
+ $form['ffmpeg']['flashvideo_remotescript'] = array(
+    '#title' => t('Use a remote script for ffmpeg'),
+    '#type' => 'checkbox',
+    '#default_value' => flashvideo_variable_get(NULL, 'flashvideo_remotescript', ''),
     '#maxlength' =>  128,
-    '#description' => t('The remote host that hosts ffmpeg. If your ffmpeg install is located on the same server as your drupal install leave this field blank.'),
+    '#description' => t('If you want to use a remote script to process your ffmpeg jobs please 
+    check this box. If you are using the ffmpeg install that is located on the same server as your 
+    drupal install do not check this box.'),
     '#required' => FALSE,
   );
-  $form['ffmpeg']['flashvideo_remotehostuser'] = array(
+    $form['ffmpeg']['flashvideo_remotescripturl'] = array(
+    '#title' => t('ffmpeg remote script URL'),
+    '#type' => 'textfield',
+    '#default_value' => flashvideo_variable_get(NULL, 'flashvideo_remotescripturl', ''),
+    '#maxlength' =>  128,
+    '#description' => t('If you want to use a remote script to process your ffmpeg jobs please 
+    enter the http:// address here. If your ffmpeg install is located on the same server as your 
+    drupal install leave this field blank.'),
+    '#required' => FALSE,
+  );
+  /*$form['ffmpeg']['flashvideo_remotehostuser'] = array(
     '#title' => t('ffmpeg remote host user'),
     '#type' => 'textfield',
     '#default_value' => flashvideo_variable_get(NULL, 'flashvideo_remotehostuser', ''),
@@ -644,6 +656,7 @@ function flashvideo_universal_settings_form() {
     '#description' => t('The password for the user on the remote host that can use ffmpeg on your remote host. If your ffmpeg install is located on the same server as your drupal install leave this field blank.'),
     '#required' => FALSE,
   );
+  */
   /* end external encoding server values */
   $form['ffmpeg']['flashvideo_binpath_metadata'] = array(
     '#title' => t('flvtool2 Path'),

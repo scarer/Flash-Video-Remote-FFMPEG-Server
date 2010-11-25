@@ -868,12 +868,14 @@ function flashvideo_get_convert_params($node_type) {
   $params['cmd_path'] = flashvideo_variable_get(NULL, 'flashvideo_binpath', '/usr/bin/ffmpeg');
 
   /* added for remote ffmpeg encoding server */
+  //the check box for using a remote encoding server 
+  $params['cmd_remotescript'] = flashvideo_variable_get(NULL, 'flashvideo_remotescript', '');
   //address of remote host entered through universal settings form
-  $params['cmd_remotehost'] = flashvideo_variable_get(NULL, 'flashvideo_remotehost', '');
+  $params['cmd_remotescripturl'] = flashvideo_variable_get(NULL, 'flashvideo_remotescripturl', '');
   //user that has access to remote host entered through universal settings form
-  $params['cmd_remoteuser'] = flashvideo_variable_get(NULL, 'flashvideo_remotehostuser', '');
+  /*$params['cmd_remoteuser'] = flashvideo_variable_get(NULL, 'flashvideo_remotehostuser', '');
   //password for user that has access to remote host entered through universal settings form
-  $params['cmd_remotepass'] = flashvideo_variable_get(NULL, 'flashvideo_remotehostpass', '');
+  $params['cmd_remotepass'] = flashvideo_variable_get(NULL, 'flashvideo_remotehostpass', '');*/
   /* end addition of code for remote ffmpeg encoding server */
 
   // Set the flvtool2 command path.
